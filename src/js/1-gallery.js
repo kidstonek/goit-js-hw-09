@@ -72,6 +72,7 @@ const gallerySelector = document.querySelector('.gallery');
 
 function image({preview, original, description}) {
   return `
+  <li class="gallery-item">
     <a class="gallery-link gallery-item" href="${original}">
     <img
       class="gallery-image"
@@ -81,6 +82,7 @@ function image({preview, original, description}) {
       alt="${description}"
     />
   </a>
+  </li>
 `
 }
 
