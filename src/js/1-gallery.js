@@ -1,6 +1,5 @@
 import SimpleLightbox from 'simplelightbox/dist/simple-lightbox.esm.js';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-const LB = SimpleLightbox.default || SimpleLightbox;
 
 const images = [
   {
@@ -93,7 +92,7 @@ function imagesAll(imgs) {
 document.addEventListener('DOMContentLoaded', () => {
     const markup = imagesAll(images);
     gallerySelector.innerHTML = markup;
-    const gallery = new LB('.gallery a', {captionsData: 'alt', captionSelector: 'img',
+    const gallery = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionSelector: 'img',
   captionDelay: 250,});
 
 })
