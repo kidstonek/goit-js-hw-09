@@ -11,18 +11,19 @@ const myForm = document.querySelector('.feedback-form');
 
 document.addEventListener("DOMContentLoaded", () => {
     const myTemp = loadJson()
+    formData.email = myTemp?.email || '';
+    formData.message = myTemp?.message || '';
     myForm.elements.email.value = myTemp?.email || '';
     myForm.elements.message.value = myTemp?.message || '';
+    console.log(formData)
 })
 
 
 myForm.addEventListener('input', (e) => {
-    e.preventDefault();
     const myEmail = myForm.elements.email.value.trim();
     const myMessage = myForm.elements.message.value.trim();
     formData.email = myEmail;
     formData.message = myMessage;
-    saveJson(formData);
 })
 
 
@@ -51,4 +52,6 @@ myForm.addEventListener("submit", (e) => {
     console.log(formData);
     localStorage.removeItem(MYKEY);
     myForm.reset();
+    formData.email = '';
+    formData.message = ''
 })
