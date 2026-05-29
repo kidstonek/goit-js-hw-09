@@ -24,6 +24,7 @@ myForm.addEventListener('input', (e) => {
     const myMessage = myForm.elements.message.value.trim();
     formData.email = myEmail;
     formData.message = myMessage;
+    saveJson(formData);
 })
 
 
